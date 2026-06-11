@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte - Futuro Sustentável</title>
+    <meta name="description" content="Site interativo sobre agricultura sustentável: equilíbrio entre produção e meio ambiente">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            🌱 Compromisso com o Futuro Sustentável do Planeta
+        </div>
+        <nav>
+            <div class="logo" onclick="scrollToSection('inicio')">
+                <span class="logo-icon">🌱</span>
+                Agro Forte
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                ☰
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="scrollToSection('inicio')" class="active">Início</a></li>
+                <li><a onclick="scrollToSection('praticas')">Práticas</a></li>
+                <li><a onclick="scrollToSection('simulador-section')">Simulador</a></li>
+                <li><a onclick="scrollToSection('quiz-section')">Quiz</a></li>
+                <li><a onclick="scrollToSection('estatisticas')">Dados</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p class="subtitle">Equilíbrio entre produção agrícola e preservação ambiental para as próximas gerações</p>
+            <div class="hero-buttons">
+                <button class="btn btn-accent" onclick="scrollToSection('quiz-section')">
+                    🧠 Teste seus Conhecimentos
+                </button>
+                <button class="btn btn-outline" onclick="scrollToSection('praticas')">
+                    📚 Explorar Práticas
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        
+        <!-- Seção Práticas -->
+        <h2 class="section-title" id="praticas">🌿 Práticas Agrícolas Sustentáveis</h2>
+        <p class="section-subtitle">Clique nos cards para expandir e conhecer os detalhes de cada prática</p>
+        
+        <div class="cards-grid" id="practicesGrid">
+            <!-- Card 1: Rotação de Culturas -->
+            <div class="practice-card" data-practice="rotacao">
+                <div class="card-image soil">
+                    <span>🔄</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-badge badge-essential">Essencial</span>
+                    <h3>Rotação de Culturas</h3>
+                    <p>Alternância planejada de diferentes culturas para preservar a saúde do solo.</p>
+                </div>
+                <div class="card-details">
+                    <ul>
+                        <li>Reduz pragas e doenças naturalmente</li>
+                        <li>Melhora a estrutura do solo</li>
+                        <li>Aumenta a matéria orgânica</li>
+                        <li>Reduz necessidade de fertilizantes</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stat">📈 <span>+25%</span> produtividade</div>
+                    <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); openModal('rotacao')">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Plantio Direto -->
+            <div class="practice-card" data-practice="plantio">
+                <div class="card-image soil">
+                    <span>🌾</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-badge badge-popular">Popular</span>
+                    <h3>Plantio Direto</h3>
+                    <p>Técnica que mantém a cobertura do solo, reduzindo erosão em até 90%.</p>
+                </div>
+                <div class="card-details">
+                    <ul>
+                        <li>Reduz erosão do solo em 90%</li>
+                        <li>Aumenta infiltração de água em 50%</li>
+                        <li>Sequestra carbono da atmosfera</li>
+                        <li>Preserva a umidade do solo</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stat">💧 <span>-90%</span> erosão</div>
+                    <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); openModal('plantio')">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: Irrigação Inteligente -->
+            <div class="practice-card" data-practice="irrigacao">
+                <div class="card-image water">
+                    <span>💧</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-badge badge-innovative">Inovador</span>
+                    <h3>Irrigação Inteligente</h3>
+                    <p>Sistemas automatizados que otimizam o uso da água com sensores de umidade.</p>
+                </div>
+                <div class="card-details">
+                    <ul>
+                        <li>Economiza até 60% de água</li>
+                        <li>Reduz custos operacionais</li>
+                        <li>Aumenta eficiência da irrigação</li>
+                        <li>Monitoramento em tempo real</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stat">💧 <span>-60%</span> água</div>
+                    <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); openModal('irrigacao')">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4: Controle Biológico -->
+            <div class="practice-card" data-practice="biologico">
+                <div class="card-image bio">
+                    <span>🐞</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-badge badge-natural">Natural</span>
+                    <h3>Controle Biológico</h3>
+                    <p>Uso de predadores naturais para controle de pragas sem agrotóxicos.</p>
+                </div>
+                <div class="card-details">
+                    <ul>
+                        <li>Elimina necessidade de agrotóxicos</li>
+                        <li>Preserva biodiversidade local</li>
+                        <li>Alimentos mais saudáveis</li>
+                        <li>Sem resíduos químicos</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stat">🛡️ <span>100%</span> natural</div>
+                    <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); openModal('biologico')">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5: Integração Lavoura-Pecuária -->
+            <div class="practice-card" data-practice="integracao">
+                <div class="card-image integration">
+                    <span>🐄</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-badge badge-tech">Integrado</span>
+                    <h3>Lavoura-Pecuária</h3>
+                    <p>Sistema que combina agricultura e pecuária para uso eficiente da terra.</p>
+                </div>
+                <div class="card-details">
+                    <ul>
+                        <li>Recupera pastagens degradadas</li>
+                        <li>Melhora fertilidade do solo</li>
+                        <li>Aumenta renda em até 30%</li>
+                        <li>Uso eficiente dos recursos</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stat">📈 <span>+30%</span> renda</div>
+                    <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); openModal('integracao')">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 6: Energia Renovável -->
+            <div class="practice-card" data-practice="energia">
+                <div class="card-image energy">
+                    <span>☀️</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-badge badge-renewable">Renovável</span>
+                    <h3>Energia Limpa</h3>
+                    <p>Painéis solares e biodigestores para energia renovável no campo.</p>
+                </div>
+                <div class="card-details">
+                    <ul>
+                        <li>Reduz custos em até 40%</li>
+                        <li>Energia autossuficiente</li>
+                        <li>Baixa pegada de carbono</li>
+                        <li>Aproveitamento de resíduos</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stat">⚡ <span>-40%</span> custos</div>
+                    <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); openModal('energia')">
+                        Saiba Mais
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Simulador -->
+        <h2 class="section-title" id="simulador-section">🧮 Simulador de Impacto Ambiental</h2>
+        <p class="section-subtitle">Ajuste os controles e veja o impacto das práticas sustentáveis</p>
+        
+        <div class="simulator">
+            <div class="simulator-grid">
+                <div>
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>🌾 Área Cultivada (hectares)</span>
+                            <span class="slider-value" id="areaValue">100</span>
+                        </div>
+                        <input type="range" id="areaSlider" min="10" max="1000" value="100" step="10">
+                    </div>
+                    
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>🌱 Práticas Sustentáveis (%)</span>
+                            <span class="slider-value" id="praticasValue">50</span>
+                        </div>
+                        <input type="range" id="praticasSlider" min="0" max="100" value="50" step="5">
+                    </div>
+                    
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>🔧 Tecnologia Aplicada (%)</span>
+                            <span class="slider-value" id="tecValue">60</span>
+                        </div>
+                        <input type="range" id="tecSlider" min="0" max="100" value="60" step="5">
+                    </div>
+                </div>
+                
+                <div class="result-box">
+                    <h3>📊 Resultado do Impacto</h3>
+                    <div class="result-score" id="impactScore">75</div>
+                    <div class="result-label">Índice de Sustentabilidade</div>
+                    <div class="result-details">
+                        <div class="result-item">
+                            <strong id="aguaEconomia">3.000.000</strong>
+                            <span>Litros de água economizados/ano</span>
+                        </div>
+                        <div class="result-item">
+                            <strong id="carbonoReducao">7.5</strong>
+                            <span>Toneladas de CO² reduzidas/ano</span>
+                        </div>
+                        <div class="result-item" style="grid-column: 1/-1;">
+                            <strong id="economyValue">R$ 150.000</strong>
+                            <span>Economia estimada/ano</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Quiz -->
+        <h2 class="section-title" id="quiz-section">❓ Quiz Interativo</h2>
+        <p class="section-subtitle">Teste seus conhecimentos sobre agricultura sustentável</p>
+        
+        <div class="quiz-wrapper" id="quizWrapper">
+            <div class="quiz-header-bar">
+                <h2>🧠 Agricultura Sustentável</h2>
+                <p>Clique nos cards para responder cada pergunta</p>
+            </div>
+            <div class="quiz-body">
+                <!-- Progresso -->
+                <div class="quiz-progress-wrapper">
+                    <div class="quiz-progress-info">
+                        <span>Pergunta <strong id="currentQuestionNum">1</strong> de <strong id="totalQuestions">5</strong></span>
+                        <span>Acertos: <strong id="scoreDisplay">0</strong></span>
+                    </div>
+                    <div class="quiz-progress-bar-outer">
+                        <div class="quiz-progress-bar-inner" id="progressBar"></div>
+                    </div>
+                </div>
+                
+                <!-- Pergunta -->
+                <div class="quiz-question-card">
+                    <span class="quiz-question-number" id="questionBadge">Pergunta 1</span>
+                    <p class="quiz-question-text" id="questionText">Carregando pergunta...</p>
+                </div>
+                
+                <!-- Opções em Cards -->
+                <div class="quiz-options-grid" id="optionsGrid">
+                    <!-- Preenchido dinamicamente -->
+                </div>
+                
+                <!-- Feedback -->
+                <div class="quiz-feedback-box" id="feedbackBox"></div>
+                
+                <!-- Ações -->
+                <div class="quiz-actions">
+                    <button class="btn btn-outline btn-sm" id="hintBtn">
+                        💡 Dica
+                    </button>
+                    <button class="btn btn-accent" id="nextBtn" disabled>
+                        Próxima Pergunta ➡️
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Estatísticas -->
+        <h2 class="section-title" id="estatisticas">📊 Dados da Sustentabilidade</h2>
+        <p class="section-subtitle">Números que mostram o impacto positivo das práticas sustentáveis</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card" onclick="animateStatCard(this)">
+                <div class="stat-icon">🌍</div>
+                <div class="stat-number counter" data-target="250">0</div>
+                <div class="stat-label">Milhões de Hectares Preservados</div>
+                <span class="stat-trend trend-up">↑ 12% este ano</span>
+            </div>
+            <div class="stat-card" onclick="animateStatCard(this)">
+                <div class="stat-icon">💧</div>
+                <div class="stat-number counter" data-target="480">0</div>
+                <div class="stat-label">Bilhões de Litros Economizados</div>
+                <span class="stat-trend trend-up">↑ 18% eficiência</span>
+            </div>
+            <div class="stat-card" onclick="animateStatCard(this)">
+                <div class="stat-icon">🌾</div>
+                <div class="stat-number counter" data-target="78">0</div>
+                <div class="stat-label">% Produção Sustentável</div>
+                <span class="stat-trend trend-up">↑ 5% ao ano</span>
+            </div>
+            <div class="stat-card" onclick="animateStatCard(this)">
+                <div class="stat-icon">🌳</div>
+                <div class="stat-number counter" data-target="120">0</div>
+                <div class="stat-label">Milhões Ton. CO² Reduzidas</div>
+                <span class="stat-trend trend-stable">Meta: 200M até 2030</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div class="modal-benefits" id="modalBenefits">
+                <h4>🌟 Benefícios Principais</h4>
+                <ul id="modalBenefitsList"></ul>
+            </div>
+            <button class="btn btn-primary" onclick="closeModal()" style="width: 100%; margin-top: 20px;">
+                Entendi
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast de Notificação -->
+    <div class="toast" id="toast" style="display: none;"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>🌱 Agro Forte</h3>
+                <p>Compromisso com o futuro sustentável da agricultura brasileira e mundial.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Links Rápidos</h3>
+                <a onclick="scrollToSection('praticas')">Práticas Sustentáveis</a>
+                <a onclick="scrollToSection('simulador-section')">Simulador de Impacto</a>
+                <a onclick="scrollToSection('quiz-section')">Quiz Interativo</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contato</h3>
+                <a href="mailto:contato@agroforte.com">📧 contato@agroforte.com</a>
+                <a href="tel:08001234567">📞 0800 123 4567</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Agro Forte - Futuro Sustentável. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
